@@ -8,4 +8,4 @@ SOURCE.zip contains the current Next.js source and documentation. Extract it bef
 
 Supabase email-link access is implemented. Google OAuth, a purchased real domain and venture-owned account transfer remain pending. Fictional demo data only.
 
-Private repository: provide grader access.
+Public repository for review.
