@@ -1,24 +1,22 @@
 # Week 13 verification record
-5 November 2026 | fictional data only
+5 November 2026 | Executed checks, fictional data only
 
-## Mechanical pass actually executed
-Inherited validDate('2026-99-01') reproduced RangeError: Invalid time value before modification. Regression suite initially: 7 groups pass, 1 fails. After finite-date guard: 8 groups pass, 0 fail (Node test runner). Checks: invalid/normalized/leap dates; missing owner/source; past/future/completed deadlines; attendance category mismatch; recorder/attestation/source bounds; stale/future route; event whitelist/cap; provenance length. These test shared functions, not every UI transition, server rule or cross-account isolation.
+## Mechanical failure and regression
+Before changes, validDate('2026-99-01') threw RangeError: Invalid time value. Initial regression: 7 groups pass, 1 fails. After finite-date guard: 8 groups pass, 0 fail. Shared-rule checks cover calendar/leap dates, missing owner/source, overdue dates, attendance category mismatch, recorder/attestation/length limits, stale/future route, event whitelist/privacy/cap and provenance length. They do not prove every UI transition or server-side isolation.
 
-## Browser actions actually executed on first publication
-Opened same live Vercel alias. Ran simulated extraction; event count became 1. Reviewed eight fields; created referral; event count became 2. Missing route and closure remained pending. Entered fictional contact source and recorder, checked attestation, advanced: progress 1/4 and event count 3, category automatically became institutional acceptance, advance disabled pending required inputs. Captured two actual screenshots for separate fresh-context synthetic persona walkthrough. No signed-in save, email request or real clinical action performed.
+## Browser flow actually exercised
+On first publication: extraction logged event 1; eight reviewed fields allowed creation and event 2; fictional contact advance logged event 3 and progress 1/4. Unsupported next step and closure stayed disabled.
+On second publication: completed fictional contact, acceptance and appointment with provenance. At attendance, appointment category blocked advance and closure. Matching attendance category plus fictional receiving confirmation allowed 4/4; explicit attendance checkbox then allowed fictional closure. Correcting acceptance reset progress to 1/4, removed dependent evidence and disabled closure. Event count reached 8. No account sign-in, real notification or clinical action was performed.
 
-## Security inspection
-Supabase metadata: referral_sessions RLS=true. ALL policy for authenticated requires auth.uid()=owner_id in USING and WITH CHECK. No data rows read. Security advisor reports leaked-password protection disabled; current UI uses email links, no password login. This warning remains open. Google OAuth remains unmet. No DB/schema/policy changes this session. Source review: no secret values, environment references only.
+## Persona and additional observed bug
+Two actual screenshots were reviewed in order by a separate fresh-context synthetic persona; a third screenshot retested the step-specific wording. The simulated reader understood contact versus institutional availability, while retaining long-copy and institutional-step coverage concerns. This is not human validation. Another mechanical finding: checked attestation could display confirmed with a mismatched category, although advancement correctly stayed blocked. Commit 60c7a00 ties status text to the same evidenceReady predicate; third deployment includes it.
 
-## Deployment evidence
-1. dpl_2GMtWpmE2bTvs7RW2RFRmMfisZ7b READY, source 6a2b7e3. Same project prj_JiFK0jXldpWsKNHa2kcATuaAyAet and ruta-clara-pied.vercel.app alias.
-2. dpl_9ouVi9Hcwcr1hd2vDkRogixRCii2 requested from source 1878c55, date fix and persona clarification included. Final status must be recorded after tool verification.
+## Deployment evidence - all verified READY
+1. dpl_2GMtWpmE2bTvs7RW2RFRmMfisZ7b | source 6a2b7e3 | initial extension.
+2. dpl_9ouVi9Hcwcr1hd2vDkRogixRCii2 | source 1878c55 | date fix and persona clarification.
+3. dpl_FHkji5W3GmH2hb8FCxUwsA8K9NFZ | source 60c7a00 | final display fix.
+All use existing Vercel project prj_JiFK0jXldpWsKNHa2kcATuaAyAet and alias ruta-clara-pied.vercel.app. No new application build or deployment is claimed for later document-only updates.
 
-## Uncompleted gates
-Five real users (>=3 strangers/no classmates), ranked pains, observed #1 user fix/retest/return action, matched manual economics, Google login, real domain, GitHub push, student video, full verbatim chat export. No results invented. Current vercel.app subdomain does not meet the real-domain course rule.
-
-## Second-publication browser result
-Deployment 2 verified READY. Repeated extraction/review/create, advanced contact, acceptance and appointment with fictional provenance. At attendance, selected appointment category: advance disabled and closure disabled. Changed to attendance and fictional receiving confirmation: progress 4/4, explicit attendance checkbox then permitted fictional closure. Corrected acceptance: progress reset to 1/4, later evidence removed and closure disabled. Event log reached 8 with correct/close events. Persona retest read exact-step label correctly, but still found wording long and requested institutional-step coverage.
-A presentation inconsistency was observed: the attestation checkbox could make status text say confirmed even with a mismatched evidence category (advance correctly stayed blocked). Follow-up fix ties the label to the same evidenceReady rule. This is an additional observed bug, not a manufactured failure.
-
-Final deployment 3: dpl_FHkji5W3GmH2hb8FCxUwsA8K9NFZ verified READY; source 60c7a00; existing alias unchanged.
+## Security inspection and remaining gates
+Supabase metadata: referral_sessions RLS=true; authenticated ALL policy requires auth.uid()=owner_id in USING and WITH CHECK. No data rows read, no schema/policy changes. Advisor warns leaked-password protection disabled; email-link UI has no password input. Google remains unmet. No signed-in save/reload or cross-account isolation test executed this week.
+GitHub import is now resolved; original development history is in its uploaded bundle. Real users, observed pain ranking/field retest/return action, matched economics, Google, real domain, full native chat export and student video remain pending. Fictional scenarios do not replace interviews.

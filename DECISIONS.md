@@ -14,3 +14,11 @@
 - Final observed display fix: status text uses the same evidenceReady predicate as advancement, preventing a checked box with wrong category from showing confirmed.
 
 - Final deployment 3 READY: dpl_FHkji5W3GmH2hb8FCxUwsA8K9NFZ, source 60c7a00. Next move remains human sessions and unresolved submission gates above.
+
+## Session Close - handoff update
+- GitHub access issue resolved through authenticated web uploads: d39452e, c7453fe, c7c5e26, d66b69b, 96ab9e2. Local development history remains recoverable in a bundle.
+- Keep current free Vercel subdomain per user's no-purchase instruction. Do not claim course real-domain compliance.
+- Google identity verification is still blocked; retain email-link access, do not bypass verification or claim OAuth works.
+- Five invented profiles are a labeled hypothetical supplement, not real recruitment or observations.
+- Update delivery PDFs, source archive and private conversation excerpts. No application code changed and no new test/deployment run is claimed.
+- Next move: student camera-on demo; native full-chat export; actual relevant-user observation or instructor-approved alternative. Domain/Google rubric gaps remain stated.
